@@ -46,8 +46,8 @@ xtrct(){
 
 fnt(){
 	echo "Installing additional fonts..."
-	mkdir -p /usr/share/fonts/xmind
-	cp -R $XMIND_DIR/fonts/* /usr/share/fonts/xmind/
+	mkdir -p /usr/share/fonts/truetype/xmind
+	cp -R $XMIND_DIR/fonts/* /usr/share/fonts/truetype/xmind
 	fc-cache -f
 }
 
