@@ -53,16 +53,20 @@ fnt(){
 
 lnchr(){
 	echo "Creating laucher..."
-	cat << EOF >> /usr/share/applications/xmind8.desktop
+	cat << EOF >> /usr/share/applications/xmind.desktop
 	[Desktop Entry]
 	Comment=Create and share mind maps.
 	Exec=$BIN_DIR/XMind %F
 	Name=XMind
+	Encoding=UTF-8
 	Terminal=false
 	Type=Application
+	StartupNotify=true
 	Categories=Office;
 	Icon=xmind
+	MimeType=application/xmind;
 EOF
+update-desktop-database /usr/share/applications
 }
 
 cnfg(){
