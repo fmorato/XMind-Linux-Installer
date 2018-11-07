@@ -40,8 +40,8 @@ fi
 
 xtrct(){
 	echo "Extracting files..."
-	mkdir -p /opt/xmind
-	unzip -q xmind-8-update7-linux.zip -d /opt/xmind
+	mkdir -p $XMIND_DIR
+	unzip -q xmind-8-update?-linux.zip -d $XMIND_DIR
 }
 
 fnt(){
