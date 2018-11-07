@@ -74,14 +74,6 @@ cnfg(){
 	sed -i "s/\.\/configuration/@user\.home\/\.configuration/g" "$BIN_DIR/XMind.ini"
 	sed -i "s/^\.\./\/opt\/xmind/g" "$BIN_DIR/XMind.ini"
 }
-
-ubuntu_bb(){
-cat << EOF >> $BIN_DIR/XMind.ini
---add-modules=java.se.ee
--Dosgi.requiredJavaVersion=1.8
--Xms256m
--Xmx1024m
-EOF
 }
 
 mimeicns(){
@@ -99,14 +91,6 @@ then
 	lnchr
 	cnfg $1
 	mimeicns
-	while true; do
-    read -p "Do you installing in Ubuntu 18.04 or its derivative (y/n)?" yn
-    case $yn in
-        [Yy]* ) ubuntu_bb; break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-	done
 	echo "Installation finished. Happy mind mapping!"
 else
 	echo "Instalation failed"
