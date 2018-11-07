@@ -80,7 +80,8 @@ mimeicns(){
 	echo "Updating MIME database and icons"
 	cp xmind.xml /usr/share/mime/packages/
 	update-mime-database /usr/share/mime
-	cp -r xmind.svg /usr/share/icons/hicolor/scalable/{apps,mimetypes}
+	cp -r xmind.svg /usr/share/icons/hicolor/scalable/apps/
+	cp -r xmind.svg /usr/share/icons/hicolor/scalable/mimetypes/application-xmind.svg
 	gtk-update-icon-cache --quiet /usr/share/icons/hicolor/ -f
 }
 
