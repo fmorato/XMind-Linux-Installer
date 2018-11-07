@@ -35,8 +35,13 @@ then
 else
   echo "OK"
 fi
-echo "Removing launcher..."
-rm -rf /usr/share/applications/xmind8.desktop
+echo "Removing launcher, mime, fonts, icon..."
+rm /usr/share/applications/xmind.desktop \
+/usr/share/mime/packages/xmind.xml \
+/usr/share/fonts/truetype/xmind/** \
+/usr/share/icons/hicolor/scalable/**/*xmind.svg
+
+rmdir /usr/share/fonts/truetype/xmind/
 if [ $? != 0 ]
 then
   status_flag=1
@@ -44,9 +49,11 @@ then
 else
   echo "OK"
 fi
-echo "...Updating MIME database"
-rm /usr/share/mime/packages/xmind.xml
+echo "...Updating MIME, applications, font and icon database"
+update-desktop-database /usr/share/applications
 update-mime-database /usr/share/mime
+gtk-update-icon-cache --quiet /usr/share/icons/hicolor/ -f
+fc-cache -f
 if [ $? != 0 ]
 then
   status_flag=1
