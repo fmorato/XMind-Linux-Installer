@@ -10,13 +10,13 @@
 ##
 ## How to use this script
 ## 1. run the script using privileged user or using sudo command
-## 2. don't forget to pass the user of the program in the command argument
 ##
 ## example
 ## sudo bash xmind8-installer.sh uname
 
 ARCH=`uname -m`
 XMIND_DIR="/opt/xmind"
+
 if [ $ARCH == "x86_64" ]
 then
 	VERSION="XMind_amd64"
