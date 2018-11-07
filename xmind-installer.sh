@@ -2,8 +2,8 @@
 ##
 ## XMind 8 Installer
 ##
-## Author: Mohammad Riza Nurtam
-## Email: muhammadriza@gmail.com
+## Author: Felipe Morato - me@fmorato.com
+## Author: Mohammad Riza Nurtam - muhammadriza@gmail.com
 ##
 ## Licensed under GPL V3
 ## Please refer to https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -13,7 +13,7 @@
 ## 2. don't forget to pass the user of the program in the command argument
 ##
 ## example
-## sudo bash xmind8-installer.sh mriza
+## sudo bash xmind8-installer.sh uname
 
 ARCH=`uname -m`
 XMIND_DIR="/opt/xmind"
