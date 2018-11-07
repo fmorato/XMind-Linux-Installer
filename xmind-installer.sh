@@ -67,13 +67,13 @@ EOF
 
 cnfg(){
 	echo "Creating workspace and configuration..."
-	mkdir /home/$1/{workspace,.configuration}
-	cp -R $BIN_DIR/configuration/* /home/$1/.configuration
-	chown -R $1: /home/$1/{workspace,.configuration}
-	sed -i "s/\.\.\/workspace/@user\.home\/workspace/g" "$BIN_DIR/XMind.ini"
-	sed -i "s/\.\/configuration/@user\.home\/\.configuration/g" "$BIN_DIR/XMind.ini"
-	sed -i "s/^\.\./\/opt\/xmind/g" "$BIN_DIR/XMind.ini"
-}
+	mkdir /home/$1/.config/xmind/
+	mkdir /home/$1/xmind-workspace/
+	cp -R $BIN_DIR/configuration/* /home/$1/.config/xmind/
+	chown -R $1:$1 /home/$1/.config/xmind/
+	chown -R $1:$1 /home/$1/xmind-workspace/
+	sed -i "s/\.\/configuration/@user\.home\/\.config\/xmind/g" "$BIN_DIR/XMind.ini"
+	sed -i "s/\.\.\/workspace/@user\.home\/xmind\-workspace/g" "$BIN_DIR/XMind.ini"
 }
 
 mimeicns(){

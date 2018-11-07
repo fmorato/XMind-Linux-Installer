@@ -18,7 +18,7 @@ else
   echo "OK"
 fi
 echo "Removing user data..."
-rm -rf /home/$USER/workspace
+rm -rf /home/$USER/xmind-workspace
 if [ $? != 0 ]
 then
   status_flag=1
@@ -27,7 +27,7 @@ else
   echo "OK"
 fi
 echo "Removing configs..."
-rm -rf /home/$USER/{.configuration,p2}
+rm -rf /home/$USER/.config/xmind/
 if [ $? != 0 ]
 then
   status_flag=1
