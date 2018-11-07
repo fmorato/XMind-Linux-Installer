@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
-  <mime-type type="application/mindmap">
+  <mime-type type="application/xmind">
     <comment>Xmind files</comment>
     <icon name="application-xmind"/>
     <glob pattern="*.XMIND"/>
