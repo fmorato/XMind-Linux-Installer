@@ -2,7 +2,7 @@
 
 BASH script to install XMind 8 on Debian.
 
-Includes Launcher, MIME type link and icon.
+Includes Launcher, MIME type link and icon. Some GNOME themes come with XMind icon and they have precedence over the one that is included.
 
 # Install
 
@@ -10,24 +10,24 @@ Includes Launcher, MIME type link and icon.
 
         sudo apt install unzip default-jre libgtk2.0-0 libwebkitgtk-1.0-0 lame libc6 libglib2.0-0
 
-2.  Download XMind: http://www.xmind.net/download/linux/
+2.  Get the scripts 
 
-3.  Get the scripts `git clone https://github.com/fmorato/XMind-Linux-Installer.git`
-
+        git clone https://github.com/fmorato/XMind-Linux-Installer.git
         cd XMind-Linux-Installer
-        mv ~/Downloads/xmind8-update?-linux.zip .
-        sudo chmod +x xmind-installer.sh
-        sudo ./xmind-installer.sh username
+
+3.  See `xmind.conf` for configuration options and setting XMind version.
+
+4.  Add execute permission to the installer script and run it:
+	
+	    sudo chmod +x xmind-install.sh
+	    sudo ./xmind-install.sh username
 
     username is the linux user that will run the software.
 
-4.  Add execute permission to the installer script and run it,
-    `chmod +x xmind-installer.sh`; `sudo ./xmind-installer.sh username`
-
 # Uninstall
 
-    sudo chmod +x uninstaller.sh
-    sudo ./uninstaller.sh username
+        sudo chmod +x xmind-uninstall.sh
+        sudo ./xmind-uninstall.sh username
 
 # Credits
 
