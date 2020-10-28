@@ -7,7 +7,15 @@ Includes Launcher, MIME type link and icon. Some GNOME themes come with XMind ic
 # Install
 
 1.  Dependencies
-
+    
+    Requires Java 8.
+    
+    Fedora
+    
+        sudo dnf install unzip webkitgtk gtk2 glibc lame java-1.8.0
+    
+    Debian
+    
         sudo apt install unzip default-jre libgtk2.0-0 libwebkitgtk-1.0-0 lame libc6 libglib2.0-0
 
 2.  Get the scripts 
@@ -19,15 +27,13 @@ Includes Launcher, MIME type link and icon. Some GNOME themes come with XMind ic
 
 4.  Add execute permission to the installer script and run it:
 	
-	    sudo chmod +x xmind-install.sh
-	    sudo ./xmind-install.sh username
-
-    username is the linux user that will run the software.
+        sudo chmod +x xmind-install.sh
+        sudo ./xmind-install.sh
 
 # Uninstall
 
-        sudo chmod +x xmind-uninstall.sh
-        sudo ./xmind-uninstall.sh username
+    sudo chmod +x xmind-uninstall.sh
+    sudo ./xmind-uninstall.sh
 
 # Credits
 

@@ -17,12 +17,6 @@ function echoR() {
     echo ''
 }
 
-if [ -z "$1" ]
-then
-	echo "USAGE:
-	sudo xmind-installer.sh username"
-	exit 1
-fi
 # Check first for username and then load config
 source ./xmind.conf
 
@@ -56,12 +50,12 @@ else
   echoY "OK"
 fi
 echoY "Removing launcher, mime, fonts, icon..."
-rm /usr/share/applications/xmind.desktop \
-/usr/share/mime/packages/xmind.xml \
-/usr/share/fonts/truetype/xmind/** \
-/usr/share/icons/hicolor/scalable/**/*xmind.svg
+rm "$HOME"/.local/share/applications/xmind.desktop \
+"$HOME"/.local/share/mime/packages/xmind.xml \
+"$HOME"/.local/share/fonts/xmind/** \
+"$HOME"/.local/share/icons/hicolor/scalable/**/*xmind.svg
 
-rmdir /usr/share/fonts/truetype/xmind/
+rmdir "$HOME"/.local/share/fonts/xmind/
 if [ $? != 0 ]
 then
   status_flag=1
@@ -70,9 +64,9 @@ else
   echoY "OK"
 fi
 echoY "...Updating MIME, applications, font and icon database"
-update-desktop-database /usr/share/applications
-update-mime-database /usr/share/mime
-gtk-update-icon-cache --quiet /usr/share/icons/hicolor/ -f
+update-desktop-database "$HOME"/.local/share/applications
+update-mime-database "$HOME"/.local/share/mime
+gtk-update-icon-cache --quiet "$HOME"/.local/share/icons/hicolor/ -f
 fc-cache -f
 if [ $? != 0 ]
 then
